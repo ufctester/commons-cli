@@ -26,7 +26,7 @@ import java.util.List;
  * The class PosixParser provides an implementation of the
  * {@link Parser#flatten(Options,String[],boolean) flatten} method.
  *
- * @version $Id: PosixParser.java 1677406 2015-05-03 14:27:31Z britter $
+ * @version $Id: PosixParser.java 1677451 2015-05-03 17:09:29Z ggregory $
  * @deprecated since 1.3, use the {@link DefaultParser} instead
  */
 @Deprecated
@@ -154,11 +154,8 @@ public class PosixParser extends Parser
                     {
                         throw new AmbiguousOptionException(token, matchingOpts);
                     }
-                    else
-                    {
-                        Option opt = options.getOption(matchingOpts.get(0));
-                        processOptionToken("-" + opt.getLongOpt(), stopAtNonOption);
-                    }
+                    Option opt = options.getOption(matchingOpts.get(0));
+                    processOptionToken("-" + opt.getLongOpt(), stopAtNonOption);
                 }
                 // requires bursting
                 else

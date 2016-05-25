@@ -30,7 +30,7 @@ import java.util.Date;
  * of conversion functionalities to ConvertUtils component in Commons
  * already. BeanUtils I think.
  *
- * @version $Id: TypeHandler.java 1443102 2013-02-06 18:12:16Z tn $
+ * @version $Id: TypeHandler.java 1677452 2015-05-03 17:10:00Z ggregory $
  */
 public class TypeHandler
 {
@@ -149,10 +149,7 @@ public class TypeHandler
             {
                 return Double.valueOf(str);
             }
-            else
-            {
-                return Long.valueOf(str);
-            }
+            return Long.valueOf(str);
         }
         catch (NumberFormatException e)
         {

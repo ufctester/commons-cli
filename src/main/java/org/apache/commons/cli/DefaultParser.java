@@ -25,7 +25,7 @@ import java.util.Properties;
 /**
  * Default parser.
  * 
- * @version $Id: DefaultParser.java 1677406 2015-05-03 14:27:31Z britter $
+ * @version $Id: DefaultParser.java 1677454 2015-05-03 17:13:54Z ggregory $
  * @since 1.3
  */
 public class DefaultParser implements CommandLineParser
@@ -49,7 +49,7 @@ public class DefaultParser implements CommandLineParser
     /** The last option parsed. */
     protected Option currentOption;
  
-    /** Flag indicating if tokens should no longer be analysed and simply added as arguments of the command line. */
+    /** Flag indicating if tokens should no longer be analyzed and simply added as arguments of the command line. */
     protected boolean skipParsing;
  
     /** The required options and groups expected to be found when parsing the command line. */

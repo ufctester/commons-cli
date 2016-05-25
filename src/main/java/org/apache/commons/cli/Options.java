@@ -39,7 +39,7 @@ import java.util.Map;
  *
  * @see org.apache.commons.cli.CommandLine
  *
- * @version $Id: Options.java 1669814 2015-03-28 18:09:26Z britter $
+ * @version $Id: Options.java 1685376 2015-06-14 09:51:59Z britter $
  */
 public class Options implements Serializable
 {
@@ -235,7 +235,13 @@ public class Options implements Serializable
         opt = Util.stripLeadingHyphens(opt);
         
         List<String> matchingOpts = new ArrayList<String>();
-        
+
+        // for a perfect match return the single option only
+        if (longOpts.keySet().contains(opt))
+        {
+            return Collections.singletonList(opt);
+        }
+
         for (String longOpt : longOpts.keySet())
         {
             if (longOpt.startsWith(opt))
